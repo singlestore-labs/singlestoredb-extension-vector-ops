@@ -1,19 +1,20 @@
-# open-source-template
-Template project for open source projects from SingleStore
+# Compiling
 
-## Usage
+    make
 
-1. [Sign up](https://www.singlestore.com/try-free/) for a free SingleStore license. This allows you
-   to run up to 4 nodes up to 32 gigs each for free. Grab your license key from
-   [SingleStore portal](https://portal.singlestore.com/?utm_medium=osm&utm_source=github) and set it as an environment
-   variable.
+# Cleaning
 
-   ```bash
-   export SINGLESTORE_LICENSE="singlestore license"
-   ```
+    make clean
 
-## Resources
+# Example
 
-* [Documentation](https://docs.singlestore.com)
-* [Twitter](https://twitter.com/SingleStoreDevs)
-* [SingleStore forums](https://www.singlestore.com/forum)
+```
+MySQL [x_db]> select json_array_unpack_f64(vector_pow_udf_f64(json_array_pack_f64('[2, 4, 6]'), 2));
++--------------------------------------------------------------------------------+
+| json_array_unpack_f64(vector_pow_udf_f64(json_array_pack_f64('[2, 4, 6]'), 2)) |
++--------------------------------------------------------------------------------+
+| [4,16,36]                                                                      |
++--------------------------------------------------------------------------------+
+1 row in set (0.097 sec)
+```
+
