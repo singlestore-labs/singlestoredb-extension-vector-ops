@@ -28,10 +28,10 @@ it, please consult the build steps below.
 
 To install these functions using the MySQL client, use the following commands.
 They assume you have built the Wasm module and your current directory is the
-root of this Git repo.  Please be sure to replace '$DBUSER`, `$DBHOST`,
+root of this Git repo.  Please be sure to replace `$DBUSER`, `$DBHOST`,
 `$DBPORT`, and `$DBNAME` with, respectively, your database username, hostname,
 port, and the name of the database where you want to deploy the functions.
-You will be prompted for a password.
+The `-p` option will prompt you for a password.
 ```bash
 mysql -u $DBUSER -h $DBHOST -P $DBPORT -D $DBNAME -p < load_extension.sql
 ```
@@ -64,7 +64,7 @@ set the environment variable `WASI_SDK_PATH` to its top-level directory.
 If you change the `extension.wit` file, you will need to regenerate the ABI
 wrappers.  To do this, make sure you have the wit-bindgen program installed. 
 Currently, SingleStoreDB only supports code generated using 
-(wit-bindgen v0.2.0)[https://github.com/bytecodealliance/wit-bindgen/releases/tag/v0.2.0].
+[wit-bindgen v0.2.0](https://github.com/bytecodealliance/wit-bindgen/releases/tag/v0.2.0).
 
 To compile:
 ```
